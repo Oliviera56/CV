@@ -1,5 +1,3 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', () => {
     // Toggle Hamburger Menu
     const hamburger = document.querySelector('.hamburger');
