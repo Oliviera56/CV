@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Toggle Hamburger Menu
+    // Basculer le menu Hamburger
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.classList.toggle('active');
     });
 
-    // Close menu when a link is clicked
+    // Fermer le menu lorsqu'un lien est cliqué
     const navItems = document.querySelectorAll('.nav-links a');
     navItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Back to Top Button
+    // Bouton Retour en Haut
     const backToTopButton = document.getElementById('back-to-top');
 
     window.addEventListener('scroll', () => {
@@ -35,50 +35,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Dark Mode Toggle
+    // Bascule Mode Sombre
     const darkModeToggle = document.getElementById('dark-mode-toggle');
 
     darkModeToggle.addEventListener('change', () => {
         document.body.classList.toggle('dark-mode');
     });
 
-    // Email and Phone Buttons Interaction
+    // Interaction des boutons Email et Téléphone
     const emailBtn = document.getElementById('email-btn');
     const phoneBtn = document.getElementById('phone-btn');
     const emailInfo = document.getElementById('email-info');
     const phoneInfo = document.getElementById('phone-info');
 
     emailBtn.addEventListener('click', (event) => {
-        event.stopPropagation(); // Prevent immediate closure
+        event.stopPropagation(); // Empêcher la fermeture immédiate
         const isVisible = emailInfo.classList.contains('show');
-        // Toggle display
+        // Basculer l'affichage
         if (isVisible) {
             emailInfo.classList.remove('show');
         } else {
             emailInfo.classList.add('show');
-            phoneInfo.classList.remove('show'); // Close the other info
+            phoneInfo.classList.remove('show'); // Fermer l'autre info
         }
     });
 
     phoneBtn.addEventListener('click', (event) => {
-        event.stopPropagation(); // Prevent immediate closure
+        event.stopPropagation(); // Empêcher la fermeture immédiate
         const isVisible = phoneInfo.classList.contains('show');
-        // Toggle display
+        // Basculer l'affichage
         if (isVisible) {
             phoneInfo.classList.remove('show');
         } else {
             phoneInfo.classList.add('show');
-            emailInfo.classList.remove('show'); // Close the other info
+            emailInfo.classList.remove('show'); // Fermer l'autre info
         }
     });
 
-    // Close contact info when clicking outside
+    // Fermer les informations de contact en cliquant à l'extérieur
     document.addEventListener('click', () => {
         emailInfo.classList.remove('show');
         phoneInfo.classList.remove('show');
     });
 
-    // Sticky Navigation Bar
+    // Barre de navigation fixe
     const navbar = document.getElementById('navbar');
     const header = document.querySelector('header');
 

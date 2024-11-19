@@ -1,12 +1,12 @@
 /* ----------------------- */
-/* CSS Variables for Theme */
+/* Variables CSS pour le Thème */
 /* ----------------------- */
 :root {
-    --primary-color: #2C3E50; /* Midnight Blue */
+    --primary-color: #2C3E50; /* Bleu Minuit */
     --secondary-color: #18BC9C; /* Turquoise */
-    --accent-color: #E74C3C; /* Vivid Red */
-    --background-color: #F4F4F4; /* Light Grey */
-    --text-color: #333333; /* Dark Grey */
+    --accent-color: #E74C3C; /* Rouge Vif */
+    --background-color: #F4F4F4; /* Gris Clair */
+    --text-color: #333333; /* Gris Foncé */
     --font-family: 'Roboto', sans-serif;
     --font-family-alt: 'Poppins', sans-serif;
     --transition-speed: 0.3s;
@@ -17,7 +17,7 @@
 }
 
 /* ----------------------- */
-/* Global Styles           */
+/* Styles Globaux          */
 /* ----------------------- */
 * {
     margin: 0;
@@ -61,7 +61,7 @@ ul {
 }
 
 /* ----------------------- */
-/* Navigation Bar          */
+/* Barre de Navigation      */
 /* ----------------------- */
 nav {
     background-color: var(--primary-color);
@@ -113,7 +113,7 @@ nav .hamburger {
     cursor: pointer;
 }
 
-/* Sticky Navigation */
+/* Navigation Fixe */
 .sticky {
     background-color: rgba(44, 62, 80, 0.95);
     box-shadow: var(--box-shadow);
@@ -121,7 +121,7 @@ nav .hamburger {
 }
 
 /* ----------------------- */
-/* Header Section          */
+/* Section d'En-tête       */
 /* ----------------------- */
 header {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -129,13 +129,13 @@ header {
     padding: 150px 0 100px 0;
     text-align: center;
     position: relative;
-    margin-top: 60px; /* Prevents content from being hidden behind the navbar */
+    margin-top: 60px; /* Empêche le contenu d'être caché derrière la barre de navigation */
 }
 
 .header-content {
     max-width: 600px;
     margin: 0 auto;
-    position: relative; /* Ensures absolute positioning of child elements is relative to this container */
+    position: relative; /* Assure le positionnement absolu des éléments enfants par rapport à ce conteneur */
 }
 
 .header-content .profile-pic {
@@ -186,16 +186,16 @@ header .social-links .contact-btn:hover {
     transform: scale(1.2);
 }
 
-/* Hidden Contact Information */
+/* Informations de Contact Cachées */
 .contact-info {
     font-size: 1rem;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0.5s ease;
     position: absolute;
-    top: 100%; /* Positions the info below the parent */
+    top: 100%; /* Positionne les infos en dessous du parent */
     left: 50%;
-    transform: translateX(-50%) translateY(10px); /* Adds slight vertical spacing */
+    transform: translateX(-50%) translateY(10px); /* Ajoute un léger espacement vertical */
     background-color: rgba(44, 62, 80, 0.95);
     color: #fff;
     padding: 10px 20px;
@@ -213,7 +213,7 @@ header .social-links .contact-btn:hover {
 }
 
 /* ----------------------- */
-/* Main Sections           */
+/* Sections Principales     */
 /* ----------------------- */
 section {
     padding: 80px 0;
@@ -246,7 +246,7 @@ section h2::after {
     border-radius: 3px;
 }
 
-/* Flexible Containers */
+/* Conteneurs Flexibles */
 .jobs-container, 
 .volunteer-container, 
 .education-container, 
@@ -258,7 +258,7 @@ section h2::after {
     gap: 20px;
 }
 
-/* Jobs, Education, Volunteering, Projects, Skills, Certifications */
+/* Jobs, Éducation, Bénévolat, Projets, Compétences, Certifications */
 .job, .education-item, .volunteer-item, .project, .skill, .certification {
     background: #fff;
     padding: 20px;
@@ -294,7 +294,7 @@ section h2::after {
 }
 
 /* ----------------------- */
-/* Skills Section          */
+/* Section Compétences      */
 /* ----------------------- */
 .skills-container {
     display: grid;
@@ -330,7 +330,7 @@ section h2::after {
 }
 
 /* ----------------------- */
-/* Certifications Section   */
+/* Section Certifications   */
 /* ----------------------- */
 .certifications-container {
     display: flex;
@@ -373,7 +373,7 @@ section h2::after {
 }
 
 /* ----------------------- */
-/* Projects Section        */
+/* Section Projets          */
 /* ----------------------- */
 .projects-container {
     display: grid;
@@ -425,7 +425,7 @@ section h2::after {
 }
 
 /* ----------------------- */
-/* Footer                  */
+/* Pied de Page             */
 /* ----------------------- */
 footer {
     background-color: var(--primary-color);
@@ -442,7 +442,7 @@ footer {
 }
 
 /* ----------------------- */
-/* Back to Top Button       */
+/* Bouton Retour en Haut     */
 /* ----------------------- */
 #back-to-top {
     position: fixed;
@@ -466,7 +466,7 @@ footer {
 }
 
 /* ----------------------- */
-/* Dark Mode Toggle         */
+/* Bascule Mode Sombre       */
 /* ----------------------- */
 .theme-toggle {
     position: fixed;
@@ -511,7 +511,7 @@ footer {
     transform: translateX(25px);
 }
 
-/* Dark Mode Styles */
+/* Styles Mode Sombre */
 body.dark-mode {
     background-color: #1e1e1e;
     color: #f4f4f4;
@@ -554,7 +554,7 @@ body.dark-mode .contact-info {
     background-color: rgba(44, 62, 80, 0.95);
 }
 
-/* Smooth Transition for Theme Change */
+/* Transition fluide pour le changement de thème */
 body, nav, header, section, footer, .job, .education-item, .volunteer-item, .project, .skill, .certification, .cert-info, .contact-info {
     transition: background-color var(--transition-speed), color var(--transition-speed);
 }
@@ -563,7 +563,7 @@ body, nav, header, section, footer, .job, .education-item, .volunteer-item, .pro
 /* Animations              */
 /* ----------------------- */
 
-/* Floating Animation for Profile Picture */
+/* Animation flottante pour la photo de profil */
 @keyframes float {
     0%, 100% {
         transform: translateY(0px);
@@ -574,7 +574,7 @@ body, nav, header, section, footer, .job, .education-item, .volunteer-item, .pro
 }
 
 /* ----------------------- */
-/* Responsive Design        */
+/* Design Réactif           */
 /* ----------------------- */
 @media (max-width: 992px) {
     nav .nav-links {
@@ -643,18 +643,18 @@ body, nav, header, section, footer, .job, .education-item, .volunteer-item, .pro
         font-size: 2rem;
     }
 
-    /* Adjust Navigation Links for Small Screens */
+    /* Ajuster les liens de navigation pour les petits écrans */
     nav .nav-links li {
         margin: 10px 0;
     }
 
-    /* Adjust Contact Buttons Size */
+    /* Ajuster la taille des boutons de contact */
     header .social-links .contact-btn {
         padding: 10px;
         font-size: 1rem;
     }
 
-    /* Styles for Project Link */
+    /* Styles pour le lien du projet */
     .project-link {
         display: inline-flex;
         align-items: center;
