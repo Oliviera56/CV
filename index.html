@@ -7,139 +7,103 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-/* ===== VARIABLES ===== */
+/* ========= VARIABLES ========= */
 :root{
-  --primary:#2C3E50;        /* gris anthracite */
-  --accent:#18BC9C;         /* vert eau */
+  --primary:#2C3E50;
+  --accent:#18BC9C;
   --text:#333;
   --bg:#fff;
   --ff:'Poppins',sans-serif;
   --tag-bg:#E8F9F4;
 }
 
-/* ===== PAGE A4 ===== */
+/* ========= PAGE & GLOBAL ========= */
 @page{size:A4 portrait;margin:0;}
 html,body{height:100%;margin:0;padding:0;}
 body{
   font-family:var(--ff);
-  font-size:11.2pt;
-  line-height:1.43;
+  font-size:10.3pt;           /* –8 % */
+  line-height:1.35;           /* plus serré */
   color:var(--text);
   background:var(--bg);
-  -webkit-print-color-adjust:exact; /* couleurs intactes en PDF/print */
+  -webkit-print-color-adjust:exact;
 }
 
-/* ===== LAYOUT GLOBAL ===== */
+/* ========= CONTENEUR A4 ========= */
 .cv{
   width:210mm;
   height:297mm;
-  padding:18mm 20mm 16mm;        /* bords internes */
   box-sizing:border-box;
+  padding:14mm 16mm 14mm;     /* marges internes réduites */
   display:flex;
   flex-direction:column;
-  gap:6mm;
+  gap:5mm;
 }
 
-/* ===== HEADER ===== */
+/* ========= EN-TÊTE ========= */
 header{
   display:flex;
   align-items:center;
-  gap:12mm;
-  border-bottom:1.6px solid var(--primary);
-  padding-bottom:6mm;
+  gap:9mm;
+  border-bottom:1.4px solid var(--primary);
+  padding-bottom:5mm;
 }
 header img{
-  width:32mm;height:32mm;
+  width:26mm;height:26mm;     /* photo plus petite */
   border-radius:50%;
   object-fit:cover;
   border:2px solid var(--accent);
 }
-h1{
-  font-size:17pt;
-  margin:0;
-  color:var(--primary);
-  line-height:1.15;
-}
-.role{
-  font-weight:600;
-  color:var(--accent);
-  margin:2px 0 6px;
-  font-size:11pt;
-}
-.contact{
-  font-size:9.8pt;
-  display:flex;
-  gap:10mm;
-  flex-wrap:wrap;
-  color:var(--text);
-}
-.contact span{display:flex;align-items:center;gap:4px;}
+h1{font-size:15.5pt;margin:0;color:var(--primary);line-height:1.15;}
+.role{font-weight:600;color:var(--accent);margin:1px 0 5px;font-size:9.8pt;}
+.contact{font-size:9pt;display:flex;gap:8mm;flex-wrap:wrap;}
 
-/* ===== DEUX COLONNES ===== */
-.columns{
-  flex:1;
-  display:grid;
-  grid-template-columns:60% 38%;
-  gap:2%;
-}
+/* ========= COLONNES ========= */
+.columns{flex:1;display:grid;grid-template-columns:60% 38%;gap:2%;}
 
-/* ===== SECTIONS GAUCHE ===== */
-section{
-  margin-bottom:7mm;
-}
-section:last-child{margin-bottom:0;}
+/* ========= SECTIONS GAUCHE ========= */
+section{margin-bottom:5mm;}
 h2{
-  font-size:12.5pt;
-  margin:0 0 3mm;
+  font-size:11.3pt;
+  margin:0 0 2.6mm;
   color:var(--primary);
-  border-bottom:1.6px solid var(--accent);
-  padding-bottom:1mm;
+  border-bottom:1.4px solid var(--accent);
+  padding-bottom:.7mm;
 }
-.job-title,
-.edu-title{font-weight:600;color:var(--primary);}
-.location{font-style:italic;font-size:10pt;}
-.period{font-size:9pt;color:#666;margin-bottom:2mm;}
-ul{margin:0 0 0 4mm;padding:0;}
-ul li{margin-bottom:1.2mm;}
-/* petit trait vertical décor (gauche des expériences) */
-.block-left{border-left:2px solid var(--accent);padding-left:4mm;}
+.job-title,.edu-title{font-weight:600;color:var(--primary);}
+.location{font-style:italic;font-size:9pt;}
+.period{font-size:8.4pt;color:#666;margin-bottom:1.6mm;}
+ul{margin:0 0 0 3.2mm;padding:0;}
+ul li{margin-bottom:1mm;}
+.block-left{border-left:1.8px solid var(--accent);padding-left:3mm;}
 
-/* ===== COLONNE DROITE ===== */
+/* ========= COLONNE DROITE ========= */
 .aside h3{
   font-weight:600;
   color:var(--primary);
-  font-size:11pt;
-  margin:0 0 3mm;
+  font-size:10pt;
+  margin:0 0 2.6mm;
   position:relative;
 }
-.aside h3::before{
-  content:'›';
-  font-weight:600;
-  color:var(--accent);
-  position:absolute;
-  left:-5mm;
-}
+.aside h3::before{content:'›';color:var(--accent);position:absolute;left:-4mm;}
 .tag{
   display:inline-block;
   background:var(--tag-bg);
   border-radius:4px;
-  padding:1px 6px 2px;
-  font-size:9pt;
-  margin:0 2.4mm 2.4mm 0;
+  padding:0 5px 1px;
+  font-size:8.4pt;
+  margin:0 2mm 2mm 0;
 }
-.aside-block{margin-bottom:7mm;}
-.aside-block:last-child{margin-bottom:0;}
+.aside-block{margin-bottom:5mm;}
 
-/* ===== BÉNÉVOLAT CARD ===== */
-.card{
-  border-left:2px solid var(--accent);
-  padding-left:4mm;
-}
+.card{border-left:1.8px solid var(--accent);padding-left:3mm;}
 .card .title{font-weight:600;color:var(--primary);}
-.card .period{margin:0 0 1.6mm;font-size:9pt;color:#666;}
-/* ===== IMPRESSION ===== */
+.card .period{margin:0 0 1.2mm;font-size:8.4pt;color:#666;}
+
+/* ========= IMPRESSION – AJUSTEMENT GLOBAL ========= */
 @media print{
-  .tag{background:var(--tag-bg)!important;} /* force la couleur */
+  /* « zoom » léger pour être sûr de ne pas dépasser */
+  .cv{transform:scale(0.96);transform-origin:top left;}
 }
 </style>
 </head>
@@ -147,7 +111,7 @@ ul li{margin-bottom:1.2mm;}
 
 <div class="cv">
 
-  <!-- ===== HEADER ===== -->
+  <!-- ===== EN-TÊTE ===== -->
   <header>
     <img src="IMG_20241026_135158.jpg" alt="photo Scott">
     <div>
@@ -161,13 +125,13 @@ ul li{margin-bottom:1.2mm;}
   </header>
 
   <div class="columns">
-    <!-- ===== COLONNE GAUCHE ===== -->
+    <!-- ===== GAUCHE ===== -->
     <div>
 
       <!-- PROFIL -->
       <section>
         <h2>Profil</h2>
-        <p>Jeune professionnel bilingue (français/anglais), dynamique et motivé, cherchant à intégrer un poste de serveur dans un établissement de restauration. Fort de plusieurs expériences en service client et vente, je souhaite mettre à profit mon sens du contact et mon esprit d’équipe pour offrir une expérience de qualité à la clientèle.</p>
+        <p>Jeune professionnel bilingue (français / anglais), dynamique et motivé, désireux de rejoindre un établissement de restauration. Plusieurs expériences en service client &amp; vente ; sens du contact et esprit d’équipe pour garantir une expérience optimale.</p>
       </section>
 
       <!-- EXPÉRIENCE -->
@@ -175,41 +139,40 @@ ul li{margin-bottom:1.2mm;}
         <h2>Expérience Professionnelle</h2>
 
         <div class="block-left">
-          <p class="job-title">Ventes &amp; Service Client <br><span class="location">Norauto, Auray, France</span></p>
-          <p class="period">Sept. 2022 – Juin 2023</p>
+          <p class="job-title">Ventes &amp; Service Client<br><span class="location">Norauto, Auray, France</span></p>
+          <p class="period">Sept 2022 – Juin 2023</p>
           <ul>
-            <li>Accueil et conseil de la clientèle, gestion des rayons et de la caisse</li>
-            <li>Excellente compréhension des besoins clients et maintien d’un environnement convivial</li>
+            <li>Accueil, conseil clientèle &amp; gestion de la caisse</li>
+            <li>Maintien d’un environnement convivial</li>
           </ul>
         </div><br>
 
         <div class="block-left">
-          <p class="job-title">Nettoyage Extérieur Haute Pression <br><span class="location">Le Bono, Bretagne, France</span></p>
-          <p class="period">Juil. 2023 – Nov. 2023</p>
+          <p class="job-title">Nettoyage Haute Pression<br><span class="location">Le Bono, Bretagne</span></p>
+          <p class="period">Juil 2023 – Nov 2023</p>
           <ul>
-            <li>Travail rigoureux dans des conditions variées (résidentiel et industriel)</li>
-            <li>Respect strict des normes de sécurité et sens aigu du détail</li>
+            <li>Travail en conditions variées (industriel &amp; résidentiel)</li>
+            <li>Respect strict des normes de sécurité</li>
           </ul>
         </div><br>
 
         <div class="block-left">
-          <p class="job-title">Assistant E-commerce &amp; Gestion <br><span class="location">Kimouse, USA (télétravail)</span></p>
-          <p class="period">Fév. 2024 – Juin 2024</p>
+          <p class="job-title">Assistant E-commerce<br><span class="location">Kimouse, USA (télétravail)</span></p>
+          <p class="period">Fév 2024 – Juin 2024</p>
           <ul>
-            <li>Suivi des commandes et service client en ligne</li>
-            <li>Gestion des stocks, réponses aux demandes spécifiques et résolution de problèmes</li>
+            <li>Suivi commandes &amp; service client en ligne</li>
+            <li>Gestion de stock &amp; résolution de problèmes</li>
           </ul>
         </div><br>
 
         <div class="block-left">
-          <p class="job-title">Serveur <br><span class="location">Holly’s Diner, France</span></p>
-          <p class="period">Janv. 2025 – Début Mars 2025</p>
+          <p class="job-title">Serveur<br><span class="location">Holly’s Diner, France</span></p>
+          <p class="period">Janv 2025 – Mars 2025</p>
           <ul>
-            <li>Accueil des clients et prise de commandes</li>
-            <li>Coordination avec la cuisine pour assurer un service rapide et de qualité</li>
+            <li>Prise de commandes &amp; coordination cuisine</li>
+            <li>Service rapide &amp; attention au détail</li>
           </ul>
         </div>
-
       </section>
 
       <!-- FORMATION -->
@@ -217,85 +180,55 @@ ul li{margin-bottom:1.2mm;}
         <h2>Formation</h2>
 
         <div class="block-left">
-          <p class="edu-title">Apprentissage en Commerce <br><span class="location">Lycée Saint Louis, Auray, Bretagne</span></p>
-          <p class="period">Sept. 2019 – Juin 2020</p>
+          <p class="edu-title">Apprentissage Commerce<br><span class="location">Lycée Saint-Louis, Auray</span></p>
+          <p class="period">Sept 2019 – Juin 2020</p>
           <ul>
-            <li>Techniques de vente et bases du service client</li>
-            <li>Approche commerciale et relationnelle</li>
+            <li>Techniques de vente &amp; service client</li>
           </ul>
         </div><br>
 
         <div class="block-left">
-          <p class="edu-title">Initiation Programmation Web <br><span class="location">OpenClassrooms (en cours)</span></p>
+          <p class="edu-title">Initiation Programmation Web<br><span class="location">OpenClassrooms (en cours)</span></p>
           <p class="period">2024 – Présent</p>
           <ul>
-            <li>Notions de HTML, CSS, JavaScript</li>
-            <li>Développement de projets web simples (organisation personnelle)</li>
+            <li>HTML, CSS, JavaScript (bases)</li>
           </ul>
         </div>
       </section>
-
     </div>
 
-    <!-- ===== COLONNE DROITE ===== -->
+    <!-- ===== DROITE ===== -->
     <aside class="aside">
 
-      <!-- COMPÉTENCES -->
       <div class="aside-block">
         <h3>Compétences</h3>
-
-        <p class="tag">Service en salle</p>
-        <p class="tag">Accueil clients</p>
-        <p class="tag">Prise de commande</p>
-        <p class="tag">Gestion de caisse</p>
-        <p class="tag">Rapidité &amp; sens du détail</p>
+        <p class="tag">Service en salle</p><p class="tag">Accueil client</p><p class="tag">Prise de commande</p>
+        <p class="tag">CRM</p><p class="tag">MS Office</p><p class="tag">HTML/CSS (bases)</p>
 
         <br><h3>Langues</h3>
-        <p class="tag">Français (natif)</p>
-        <p class="tag">Anglais (courant)</p>
-
-        <br><h3>Relation Client</h3>
-        <p class="tag">Écoute active</p>
-        <p class="tag">Conseil &amp; vente</p>
-        <p class="tag">Fidélisation</p>
-
-        <br><h3>Organisation</h3>
-        <p class="tag">Gestion de stock</p>
-        <p class="tag">Planification</p>
-        <p class="tag">Priorisation</p>
-
-        <br><h3>Informatique</h3>
-        <p class="tag">MS Office 365</p>
-        <p class="tag">CRM</p>
-        <p class="tag">Base HTML/CSS</p>
+        <p class="tag">Français (natif)</p><p class="tag">Anglais (courant)</p>
 
         <br><h3>Qualités</h3>
-        <p class="tag">Travail d’équipe</p>
-        <p class="tag">Adaptabilité</p>
-        <p class="tag">Dynamisme</p>
-        <p class="tag">Sens du service</p>
+        <p class="tag">Travail d’équipe</p><p class="tag">Adaptabilité</p><p class="tag">Dynamisme</p>
       </div>
 
-      <!-- CERTIFICATIONS -->
       <div class="aside-block">
         <h3>Certifications</h3>
-        <p><strong>PSC1</strong> (Premier Secours) – Pompiers de Vannes (2021)</p>
+        <p><strong>PSC1</strong> – Pompiers de Vannes (2021)</p>
         <p><strong>Marketing Digital</strong> – Google (2022)</p>
       </div>
 
-      <!-- BÉNÉVOLAT -->
       <div class="aside-block">
         <h3>Bénévolat</h3>
         <div class="card">
-          <p class="title">Assistant EHPAD <br><span class="location">Vannes, France</span></p>
+          <p class="title">Assistant EHPAD<br><span class="location">Vannes, France</span></p>
           <p class="period">2021</p>
-          <p>Stage auprès de personnes âgées, aide au quotidien et soutien moral.</p>
+          <p>Aide quotidienne auprès de personnes âgées.</p>
         </div>
       </div>
 
     </aside>
   </div><!-- /.columns -->
-
 </div><!-- /.cv -->
 
 </body>
