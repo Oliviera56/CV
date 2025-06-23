@@ -1,297 +1,302 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scott William Aymerick MacLeod - CV</title>
-    <meta name="keywords" content="Scott Macleod, CV, Serveur, Restauration, Service client, Bilingue, Programmation">
-    <meta name="author" content="Scott William Aymerick MacLeod">
+<meta charset="UTF-8">
+<title>Scott William Aymerick MacLeod – CV</title>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- Balises Meta Open Graph -->
-    <meta property="og:title" content="Scott William Aymerick MacLeod - CV">
-    <meta property="og:url" content="https://Scott-Macleod-cv.com">
-    <meta property="og:image" content="https://votre-site-cv.com/path-to-your-desired-preview-image.jpg">
-    <meta property="og:type" content="website">
+<style>
+/* ===== VARIABLES ===== */
+:root{
+  --primary:#2C3E50;        /* gris anthracite */
+  --accent:#18BC9C;         /* vert eau */
+  --text:#333;
+  --bg:#fff;
+  --ff:'Poppins',sans-serif;
+  --tag-bg:#E8F9F4;
+}
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+/* ===== PAGE A4 ===== */
+@page{size:A4 portrait;margin:0;}
+html,body{height:100%;margin:0;padding:0;}
+body{
+  font-family:var(--ff);
+  font-size:11.2pt;
+  line-height:1.43;
+  color:var(--text);
+  background:var(--bg);
+  -webkit-print-color-adjust:exact; /* couleurs intactes en PDF/print */
+}
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+/* ===== LAYOUT GLOBAL ===== */
+.cv{
+  width:210mm;
+  height:297mm;
+  padding:18mm 20mm 16mm;        /* bords internes */
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+  gap:6mm;
+}
 
-    <!-- AOS Animation Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+/* ===== HEADER ===== */
+header{
+  display:flex;
+  align-items:center;
+  gap:12mm;
+  border-bottom:1.6px solid var(--primary);
+  padding-bottom:6mm;
+}
+header img{
+  width:32mm;height:32mm;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--accent);
+}
+h1{
+  font-size:17pt;
+  margin:0;
+  color:var(--primary);
+  line-height:1.15;
+}
+.role{
+  font-weight:600;
+  color:var(--accent);
+  margin:2px 0 6px;
+  font-size:11pt;
+}
+.contact{
+  font-size:9.8pt;
+  display:flex;
+  gap:10mm;
+  flex-wrap:wrap;
+  color:var(--text);
+}
+.contact span{display:flex;align-items:center;gap:4px;}
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+/* ===== DEUX COLONNES ===== */
+.columns{
+  flex:1;
+  display:grid;
+  grid-template-columns:60% 38%;
+  gap:2%;
+}
+
+/* ===== SECTIONS GAUCHE ===== */
+section{
+  margin-bottom:7mm;
+}
+section:last-child{margin-bottom:0;}
+h2{
+  font-size:12.5pt;
+  margin:0 0 3mm;
+  color:var(--primary);
+  border-bottom:1.6px solid var(--accent);
+  padding-bottom:1mm;
+}
+.job-title,
+.edu-title{font-weight:600;color:var(--primary);}
+.location{font-style:italic;font-size:10pt;}
+.period{font-size:9pt;color:#666;margin-bottom:2mm;}
+ul{margin:0 0 0 4mm;padding:0;}
+ul li{margin-bottom:1.2mm;}
+/* petit trait vertical décor (gauche des expériences) */
+.block-left{border-left:2px solid var(--accent);padding-left:4mm;}
+
+/* ===== COLONNE DROITE ===== */
+.aside h3{
+  font-weight:600;
+  color:var(--primary);
+  font-size:11pt;
+  margin:0 0 3mm;
+  position:relative;
+}
+.aside h3::before{
+  content:'›';
+  font-weight:600;
+  color:var(--accent);
+  position:absolute;
+  left:-5mm;
+}
+.tag{
+  display:inline-block;
+  background:var(--tag-bg);
+  border-radius:4px;
+  padding:1px 6px 2px;
+  font-size:9pt;
+  margin:0 2.4mm 2.4mm 0;
+}
+.aside-block{margin-bottom:7mm;}
+.aside-block:last-child{margin-bottom:0;}
+
+/* ===== BÉNÉVOLAT CARD ===== */
+.card{
+  border-left:2px solid var(--accent);
+  padding-left:4mm;
+}
+.card .title{font-weight:600;color:var(--primary);}
+.card .period{margin:0 0 1.6mm;font-size:9pt;color:#666;}
+/* ===== IMPRESSION ===== */
+@media print{
+  .tag{background:var(--tag-bg)!important;} /* force la couleur */
+}
+</style>
 </head>
 <body>
-    <!-- Barre de navigation -->
-    <nav id="navbar">
-        <div class="container">
-            <a href="#" class="logo">Scott Macleod</a>
-            <ul class="nav-links">
-                <li><a href="#summary">Résumé</a></li>
-                <li><a href="#experience">Expérience</a></li>
-                <li><a href="#volunteering">Bénévolat</a></li>
-                <li><a href="#education">Éducation</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-            </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
+
+<div class="cv">
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <img src="IMG_20241026_135158.jpg" alt="photo Scott">
+    <div>
+      <h1>Scott William Aymerick MacLeod</h1>
+      <div class="role">Serveur / Service Restauration</div>
+      <div class="contact">
+        <span>✉ scottmacleod156@gmail.com</span>
+        <span>📞 +33 6 59 59 22 64</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="columns">
+    <!-- ===== COLONNE GAUCHE ===== -->
+    <div>
+
+      <!-- PROFIL -->
+      <section>
+        <h2>Profil</h2>
+        <p>Jeune professionnel bilingue (français/anglais), dynamique et motivé, cherchant à intégrer un poste de serveur dans un établissement de restauration. Fort de plusieurs expériences en service client et vente, je souhaite mettre à profit mon sens du contact et mon esprit d’équipe pour offrir une expérience de qualité à la clientèle.</p>
+      </section>
+
+      <!-- EXPÉRIENCE -->
+      <section>
+        <h2>Expérience Professionnelle</h2>
+
+        <div class="block-left">
+          <p class="job-title">Ventes &amp; Service Client <br><span class="location">Norauto, Auray, France</span></p>
+          <p class="period">Sept. 2022 – Juin 2023</p>
+          <ul>
+            <li>Accueil et conseil de la clientèle, gestion des rayons et de la caisse</li>
+            <li>Excellente compréhension des besoins clients et maintien d’un environnement convivial</li>
+          </ul>
+        </div><br>
+
+        <div class="block-left">
+          <p class="job-title">Nettoyage Extérieur Haute Pression <br><span class="location">Le Bono, Bretagne, France</span></p>
+          <p class="period">Juil. 2023 – Nov. 2023</p>
+          <ul>
+            <li>Travail rigoureux dans des conditions variées (résidentiel et industriel)</li>
+            <li>Respect strict des normes de sécurité et sens aigu du détail</li>
+          </ul>
+        </div><br>
+
+        <div class="block-left">
+          <p class="job-title">Assistant E-commerce &amp; Gestion <br><span class="location">Kimouse, USA (télétravail)</span></p>
+          <p class="period">Fév. 2024 – Juin 2024</p>
+          <ul>
+            <li>Suivi des commandes et service client en ligne</li>
+            <li>Gestion des stocks, réponses aux demandes spécifiques et résolution de problèmes</li>
+          </ul>
+        </div><br>
+
+        <div class="block-left">
+          <p class="job-title">Serveur <br><span class="location">Holly’s Diner, France</span></p>
+          <p class="period">Janv. 2025 – Début Mars 2025</p>
+          <ul>
+            <li>Accueil des clients et prise de commandes</li>
+            <li>Coordination avec la cuisine pour assurer un service rapide et de qualité</li>
+          </ul>
         </div>
-    </nav>
 
-    <!-- En‑tête -->
-    <header>
-        <div class="container">
-            <div class="header-content" data-aos="fade-up">
-                <img src="IMG_20241026_135158.jpg" alt="Scott William Aymerick MacLeod - Professionnel" class="profile-pic">
-                <h1>Scott William Aymerick MacLeod</h1>
-                <h2 style="font-weight:500;margin-bottom:20px;">Serveur / Service Restauration</h2>
-                <div class="social-links">
-                    <button aria-label="Email" class="contact-btn" id="email-btn"><i class="fas fa-envelope"></i></button>
-                    <button aria-label="Téléphone" class="contact-btn" id="phone-btn"><i class="fas fa-phone"></i></button>
-                </div>
-                <!-- Informations de contact cachées -->
-                <div class="contact-info" id="email-info">scottmacleod156@gmail.com</div>
-                <div class="contact-info" id="phone-info">+33&nbsp;6&nbsp;59&nbsp;59&nbsp;22&nbsp;64</div>
-            </div>
+      </section>
+
+      <!-- FORMATION -->
+      <section>
+        <h2>Formation</h2>
+
+        <div class="block-left">
+          <p class="edu-title">Apprentissage en Commerce <br><span class="location">Lycée Saint Louis, Auray, Bretagne</span></p>
+          <p class="period">Sept. 2019 – Juin 2020</p>
+          <ul>
+            <li>Techniques de vente et bases du service client</li>
+            <li>Approche commerciale et relationnelle</li>
+          </ul>
+        </div><br>
+
+        <div class="block-left">
+          <p class="edu-title">Initiation Programmation Web <br><span class="location">OpenClassrooms (en cours)</span></p>
+          <p class="period">2024 – Présent</p>
+          <ul>
+            <li>Notions de HTML, CSS, JavaScript</li>
+            <li>Développement de projets web simples (organisation personnelle)</li>
+          </ul>
         </div>
-    </header>
+      </section>
 
-    <!-- Contenu principal -->
-    <main>
-        <!-- Résumé -->
-        <section id="summary" class="fade-in" data-aos="fade-up">
-            <div class="container">
-                <h2>Résumé</h2>
-                <p>
-                    Jeune professionnel bilingue (français/anglais), dynamique et motivé, doté d'une solide expérience en service client et vente. Mon objectif est de mettre à profit mon sens du contact, mon esprit d'équipe et mon dynamisme pour offrir une expérience de qualité à la clientèle dans le secteur de la restauration.
-                </p>
-            </div>
-        </section>
-
-        <!-- Expérience professionnelle -->
-        <section id="experience" class="fade-in" data-aos="fade-up" data-aos-delay="200">
-            <div class="container">
-                <h2>Expérience</h2>
-                <div class="jobs-container">
-                    <!-- Réceptionniste de Nuit -->
-                    <div class="job" data-aos="fade-up" data-aos-delay="100">
-                        <h3>Réceptionniste de Nuit</h3>
-                        <h4>La Maison Obono, France</h4>
-                        <span>Depuis le 29&nbsp;avril&nbsp;2025 – Présent</span>
-                        <ul>
-                            <li>Accueil des clients de nuit, gestion des arrivées et départs.</li>
-                            <li>Surveillance et gestion de la sécurité de l’établissement.</li>
-                            <li>Traitement des demandes clients et gestion des réservations tardives.</li>
-                            <li>Clôture des opérations de caisse et préparation des rapports pour l’équipe de jour.</li>
-                        </ul>
-                    </div>
-                    <!-- Serveur -->
-                    <div class="job" data-aos="fade-up" data-aos-delay="200">
-                        <h3>Serveur</h3>
-                        <h4>Holly's Diner, France</h4>
-                        <span>Janv.&nbsp;2025 – Mars&nbsp;2025</span>
-                        <ul>
-                            <li>Accueil des clients et prise de commandes.</li>
-                            <li>Service en salle et conseil sur les plats et boissons.</li>
-                            <li>Coordination avec la cuisine pour assurer un service rapide et de qualité.</li>
-                        </ul>
-                    </div>
-                    <!-- Assistant E‑commerce & Gestion -->
-                    <div class="job" data-aos="fade-up" data-aos-delay="300">
-                        <h3>Assistant E‑commerce & Gestion</h3>
-                        <h4>Kimouse, USA (télétravail)</h4>
-                        <span>Fév.&nbsp;2024 – Juin&nbsp;2024</span>
-                        <ul>
-                            <li>Suivi des commandes et service client en ligne.</li>
-                            <li>Gestion des stocks et réponses aux demandes spécifiques.</li>
-                            <li>Résolution de problèmes et amélioration de la satisfaction client.</li>
-                        </ul>
-                    </div>
-                    <!-- Nettoyage Extérieur Haute Pression -->
-                    <div class="job" data-aos="fade-up" data-aos-delay="400">
-                        <h3>Nettoyage Extérieur Haute Pression</h3>
-                        <h4>Le Bono, Bretagne, France</h4>
-                        <span>Juil.&nbsp;2023 – Nov.&nbsp;2023</span>
-                        <ul>
-                            <li>Travail rigoureux dans des environnements résidentiels et industriels.</li>
-                            <li>Respect strict des normes de sécurité et sens aigu du détail.</li>
-                        </ul>
-                    </div>
-                    <!-- Ventes & Service Client -->
-                    <div class="job" data-aos="fade-up" data-aos-delay="500">
-                        <h3>Ventes & Service Client</h3>
-                        <h4>Norauto, Auray, France</h4>
-                        <span>Sept.&nbsp;2022 – Juin&nbsp;2023</span>
-                        <ul>
-                            <li>Accueil et conseil de la clientèle, gestion des rayons et de la caisse.</li>
-                            <li>Compréhension des besoins clients et maintien d’un environnement convivial.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bénévolat -->
-        <section id="volunteering" class="fade-in" data-aos="fade-up" data-aos-delay="400">
-            <div class="container">
-                <h2>Bénévolat</h2>
-                <div class="volunteer-container">
-                    <div class="volunteer-item" data-aos="fade-up" data-aos-delay="100">
-                        <h3>Assistant EHPAD</h3>
-                        <h4>Vannes, France</h4>
-                        <span>2021</span>
-                        <p>Stage auprès de personnes âgées : aide au quotidien et soutien moral.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Éducation -->
-        <section id="education" class="fade-in" data-aos="fade-up" data-aos-delay="600">
-            <div class="container">
-                <h2>Éducation</h2>
-                <div class="education-container">
-                    <!-- Apprentissage en Commerce -->
-                    <div class="education-item" data-aos="fade-up" data-aos-delay="100">
-                        <h3>Apprentissage en Commerce</h3>
-                        <h4>Lycée Saint Louis, Auray, Bretagne, France</h4>
-                        <span>Sept.&nbsp;2019 – Juin&nbsp;2020</span>
-                        <p>Techniques de vente et bases du service client ; approche commerciale et relationnelle.</p>
-                    </div>
-                    <!-- Initiation Programmation Web -->
-                    <div class="education-item" data-aos="fade-up" data-aos-delay="200">
-                        <h3>Initiation Programmation Web (en cours)</h3>
-                        <h4>OpenClassrooms</h4>
-                        <span>2024 – Présent</span>
-                        <p>Notions de HTML, CSS, JavaScript ; développement de projets web simples pour l'organisation personnelle.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Compétences -->
-        <section id="skills" class="fade-in" data-aos="fade-up" data-aos-delay="800">
-            <div class="container">
-                <h2>Compétences</h2>
-                <div class="skills-container">
-                    <!-- Service en Salle -->
-                    <div class="skill" data-aos="fade-up" data-aos-delay="100">
-                        <h3>Service en Salle</h3>
-                        <ul>
-                            <li>Accueil clients</li>
-                            <li>Prise de commande</li>
-                            <li>Gestion de caisse</li>
-                            <li>Rapidité &amp; sens du détail</li>
-                        </ul>
-                    </div>
-                    <!-- Langues -->
-                    <div class="skill" data-aos="fade-up" data-aos-delay="200">
-                        <h3>Langues</h3>
-                        <ul>
-                            <li>Français (natif)</li>
-                            <li>Anglais (courant)</li>
-                        </ul>
-                    </div>
-                    <!-- Relation Client -->
-                    <div class="skill" data-aos="fade-up" data-aos-delay="300">
-                        <h3>Relation Client</h3>
-                        <ul>
-                            <li>Écoute active</li>
-                            <li>Conseil &amp; vente</li>
-                            <li>Fidélisation</li>
-                        </ul>
-                    </div>
-                    <!-- Organisation -->
-                    <div class="skill" data-aos="fade-up" data-aos-delay="400">
-                        <h3>Organisation</h3>
-                        <ul>
-                            <li>Gestion de stock</li>
-                            <li>Planification</li>
-                            <li>Priorisation</li>
-                        </ul>
-                    </div>
-                    <!-- Informatique -->
-                    <div class="skill" data-aos="fade-up" data-aos-delay="500">
-                        <h3>Informatique</h3>
-                        <ul>
-                            <li>MS Office 365</li>
-                            <li>CRM</li>
-                            <li>Base HTML/CSS</li>
-                        </ul>
-                    </div>
-                    <!-- Qualités -->
-                    <div class="skill" data-aos="fade-up" data-aos-delay="600">
-                        <h3>Qualités</h3>
-                        <ul>
-                            <li>Travail d'équipe</li>
-                            <li>Adaptabilité</li>
-                            <li>Dynamisme</li>
-                            <li>Sens du service</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications -->
-        <section id="certifications" class="fade-in" data-aos="fade-up" data-aos-delay="1000">
-            <div class="container">
-                <h2>Certifications</h2>
-                <div class="certifications-container">
-                    <!-- PSC1 -->
-                    <div class="certification" data-aos="zoom-in" data-aos-delay="100">
-                        <i class="fas fa-certificate fa-2x"></i>
-                        <div class="cert-info">
-                            <h3>PSC1 (Premier Secours)</h3>
-                            <p>Pompiers de Vannes – 2021</p>
-                        </div>
-                    </div>
-                    <!-- Marketing Digital -->
-                    <div class="certification" data-aos="zoom-in" data-aos-delay="200">
-                        <i class="fas fa-certificate fa-2x"></i>
-                        <div class="cert-info">
-                            <h3>Marketing Digital</h3>
-                            <p>Google – 2022</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Pied de page -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Scott William Aymerick MacLeod. Tous droits réservés.</p>
-        </div>
-    </footer>
-
-    <!-- Bouton Retour en Haut -->
-    <button id="back-to-top" aria-label="Retour en haut"><i class="fas fa-arrow-up"></i></button>
-
-    <!-- Bascule Mode Sombre -->
-    <div class="theme-toggle">
-        <input type="checkbox" id="dark-mode-toggle">
-            <span class="toggle-ball"></span>
-        </label>
     </div>
 
-    <!-- Bibliothèques JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="script.js"></script>
-    <script>
-        AOS.init({
-            duration: 700,
-            once: true,
-            easing: 'ease-in-out',
-        });
-    </script>
+    <!-- ===== COLONNE DROITE ===== -->
+    <aside class="aside">
+
+      <!-- COMPÉTENCES -->
+      <div class="aside-block">
+        <h3>Compétences</h3>
+
+        <p class="tag">Service en salle</p>
+        <p class="tag">Accueil clients</p>
+        <p class="tag">Prise de commande</p>
+        <p class="tag">Gestion de caisse</p>
+        <p class="tag">Rapidité &amp; sens du détail</p>
+
+        <br><h3>Langues</h3>
+        <p class="tag">Français (natif)</p>
+        <p class="tag">Anglais (courant)</p>
+
+        <br><h3>Relation Client</h3>
+        <p class="tag">Écoute active</p>
+        <p class="tag">Conseil &amp; vente</p>
+        <p class="tag">Fidélisation</p>
+
+        <br><h3>Organisation</h3>
+        <p class="tag">Gestion de stock</p>
+        <p class="tag">Planification</p>
+        <p class="tag">Priorisation</p>
+
+        <br><h3>Informatique</h3>
+        <p class="tag">MS Office 365</p>
+        <p class="tag">CRM</p>
+        <p class="tag">Base HTML/CSS</p>
+
+        <br><h3>Qualités</h3>
+        <p class="tag">Travail d’équipe</p>
+        <p class="tag">Adaptabilité</p>
+        <p class="tag">Dynamisme</p>
+        <p class="tag">Sens du service</p>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="aside-block">
+        <h3>Certifications</h3>
+        <p><strong>PSC1</strong> (Premier Secours) – Pompiers de Vannes (2021)</p>
+        <p><strong>Marketing Digital</strong> – Google (2022)</p>
+      </div>
+
+      <!-- BÉNÉVOLAT -->
+      <div class="aside-block">
+        <h3>Bénévolat</h3>
+        <div class="card">
+          <p class="title">Assistant EHPAD <br><span class="location">Vannes, France</span></p>
+          <p class="period">2021</p>
+          <p>Stage auprès de personnes âgées, aide au quotidien et soutien moral.</p>
+        </div>
+      </div>
+
+    </aside>
+  </div><!-- /.columns -->
+
+</div><!-- /.cv -->
+
 </body>
 </html>
