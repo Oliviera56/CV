@@ -21,17 +21,17 @@ body{
   font-size:9.9pt;
   line-height:1.32;
   color:var(--text);
-  background:#e5e5e5;             /* fond gris clair pour mettre en valeur la "feuille" */
+  background:#e5e5e5;             /* gris pour fond d'écran */
   display:flex;justify-content:center;align-items:flex-start;
   -webkit-print-color-adjust:exact;
 }
-/* "Feuille" A4 centrée */
+/* Feuille A4 */
 .cv-wrapper{
   width:210mm;height:297mm;background:var(--bg);box-shadow:0 0 6px rgba(0,0,0,.25);
-  margin-top:10mm;                /* légère marge visuelle sur écran */
+  margin-top:10mm;
 }
 .cv{
-  width:100%;height:100%;padding:12mm;box-sizing:border-box;display:flex;flex-direction:column;gap:4.5mm;
+  width:100%;height:100%;padding:12mm;display:flex;flex-direction:column;gap:4.5mm;
 }
 header{display:flex;align-items:center;gap:8mm;border-bottom:1.2px solid var(--primary);padding-bottom:4mm;}
 header img{width:24mm;height:24mm;border-radius:50%;object-fit:cover;border:2px solid var(--accent);}
@@ -123,17 +123,11 @@ ul{margin-left:2.8mm;} ul li{margin-bottom:.8mm;}
             </ul>
           </div>
         </section>
-
-        <!-- FORMATION -->
-        <section>
-          <h2>Formation</h2>
-          <div class="block-left"><p class="edu-title">Apprentissage Commerce<br><span class="location">Lycée Saint‑Louis, Auray</span></p><p class="period">09 / 2019 – 06 / 2020</p></div><br>
-          <div class="block-left"><p class="edu-title">Initiation Programmation Web<br><span class="location">OpenClassrooms (en cours)</span></p><p class="period">2024 – Présent</p></div>
-        </section>
       </div>
 
-      <!-- RIGHT COLUMN -->
+      <!-- RIGHT COLUMN (COMPÉTENCES + CERTIFS + BÉNÉVOLAT + FORMATION) -->
       <aside class="aside">
+        <!-- COMPÉTENCES -->
         <div class="aside-block">
           <h3>Compétences</h3>
           <p class="tag">Service en salle</p><p class="tag">Accueil client</p><p class="tag">Commande</p>
@@ -146,19 +140,26 @@ ul{margin-left:2.8mm;} ul li{margin-bottom:.8mm;}
           <p class="tag">Travail d’équipe</p><p class="tag">Adaptable</p><p class="tag">Dynamique</p>
         </div>
 
+        <!-- CERTIFICATIONS -->
         <div class="aside-block">
           <h3>Certifications</h3>
           <p><strong>PSC1</strong> – 2021</p>
           <p><strong>Marketing Digital</strong> – 2022</p>
         </div>
 
+        <!-- BÉNÉVOLAT -->
         <div class="aside-block">
           <h3>Bénévolat</h3>
           <div class="card"><p class="title">Assistant EHPAD<br><span class="location">Vannes (2021)</span></p></div>
         </div>
-      </aside>
-    </div><!-- /.columns -->
-  </div><!-- /.cv -->
-</div><!-- /.wrapper -->
-</body>
-</html>
+
+        <!-- FORMATION déplacée ici -->
+        <div class="aside-block">
+          <h3>Formation</h3>
+          <div class="card">
+            <p class="title">Apprentissage Commerce<br><span class="location">Lycée Saint‑Louis, Auray</span></p>
+            <p class="period">09 / 2019 – 06 / 2020</p>
+          </div><br>
+          <div class="card">
+            <p class="title">Initiation Programmation Web<br><span class="location">OpenClassrooms (en cours)</span></p>
+            <p class="period">2024 – Présent
