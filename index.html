@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Scott William Aymerick MacLeod – CV</title>
-<meta charset="UTF-8">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
+/******** VARIABLES & RESET ********/
 :root{
   --primary:#2C3E50;
   --accent:#18BC9C;
@@ -14,31 +14,39 @@
   --ff:'Poppins',sans-serif;
   --tag-bg:#E8F9F4;
 }
+*{box-sizing:border-box;margin:0;padding:0;}
 
-/* === PAGE === */
-@page{size:A4 portrait;margin:0;}
-html,body{height:100%;margin:0;padding:0;}
+/******** PAGE BACKGROUND FOR SCREEN ********/
 body{
   font-family:var(--ff);
-  font-size:9.9pt;          /* – ≈3 % vs V3 */
+  font-size:9.9pt;          /* compact */
   line-height:1.32;
   color:var(--text);
-  background:var(--bg);
+  background:#dcdcdc;       /* gris clair autour de la "feuille" */
   -webkit-print-color-adjust:exact;
 }
 
-/* === CONTAINER === */
-.cv{
+/******** TRUE A4 SHEET WRAPPER ********/
+@page{size:A4 portrait;margin:0;}
+.page{
   width:210mm;
   height:297mm;
-  padding:12mm;            /* marges internes réduites */
-  box-sizing:border-box;
+  background:#fff;
+  margin:0 auto;            /* centré à l'écran */
+  box-shadow:0 0 6mm rgba(0,0,0,.15);
+  padding:12mm;             /* marges internes */
   display:flex;
   flex-direction:column;
-  gap:4.5mm;               /* inter-blocs global */
+  gap:4.5mm;
 }
 
-/* === HEADER === */
+/******** PRINT: retirer l'effet écran ********/
+@media print{
+  body{background:#fff;}
+  .page{margin:0;box-shadow:none;}
+}
+
+/******** EN‑TÊTE ********/
 header{
   display:flex;
   align-items:center;
@@ -47,18 +55,18 @@ header{
   padding-bottom:4mm;
 }
 header img{
-  width:24mm;height:24mm;  /* photo réduite */
+  width:24mm;height:24mm;
   border-radius:50%;object-fit:cover;
   border:2px solid var(--accent);
 }
-h1{font-size:14.4pt;margin:0;color:var(--primary);}
+h1{font-size:14.4pt;color:var(--primary);}
 .role{font-weight:600;color:var(--accent);font-size:9.2pt;margin:1px 0 4px;}
-.contact{font-size:8.5pt;display:flex;gap:6.5mm;flex-wrap:wrap;}
+.contact{font-size:8.5pt;display:flex;gap:6mm;flex-wrap:wrap;}
 
-/* === COLUMNS === */
+/******** COLONNES ********/
 .columns{flex:1;display:grid;grid-template-columns:60% 38%;gap:2%;}
 
-/* === LEFT (sections) === */
+/******** SECTIONS GAUCHE ********/
 section{margin-bottom:4mm;}
 h2{
   font-size:10.6pt;
@@ -66,14 +74,14 @@ h2{
   border-bottom:1.2px solid var(--accent);
   padding-bottom:.6mm;margin:0 0 2.4mm;
 }
-.job-title,.edu-title{font-weight:600;color:var(--primary);}
+.job-title,.edu-title{font-weight:600;color:var(--primary);} 
 .location{font-style:italic;font-size:8.3pt;}
 .period{font-size:7.8pt;color:#666;margin-bottom:1.2mm;}
-ul{margin:0 0 0 2.8mm;padding:0;}
+ul{margin:0 0 0 2.8mm;}
 ul li{margin-bottom:.8mm;}
 .block-left{border-left:1.6px solid var(--accent);padding-left:2.5mm;}
 
-/* === RIGHT (aside) === */
+/******** COLONNE DROITE ********/
 .aside h3{
   font-size:9.4pt;font-weight:600;color:var(--primary);
   margin:0 0 2.2mm;position:relative;
@@ -85,19 +93,14 @@ ul li{margin-bottom:.8mm;}
 }
 .aside-block{margin-bottom:4mm;}
 .card{border-left:1.6px solid var(--accent);padding-left:2.5mm;}
-.card .title{font-weight:600;color:var(--primary);}
+.card .title{font-weight:600;color:var(--primary);} 
 .card .period{font-size:7.8pt;color:#666;margin:0 0 1mm;}
-
-/* === PRINT SHRINK === */
-@media print{
-  .cv{transform:scale(0.94);transform-origin:top left;}
-}
 </style>
 </head>
 <body>
-<div class="cv">
+<div class="page">
 
-  <!-- HEADER -->
+  <!-- EN‑TÊTE -->
   <header>
     <img src="IMG_20241026_135158.jpg" alt="photo Scott">
     <div>
@@ -111,15 +114,15 @@ ul li{margin-bottom:.8mm;}
   </header>
 
   <div class="columns">
-    <!-- LEFT -->
+    <!-- GAUCHE -->
     <div>
-      <!-- Profil -->
+      <!-- PROFIL -->
       <section>
         <h2>Profil</h2>
-        <p>Jeune professionnel bilingue (français-anglais) motivé, avec expériences en service client et vente. Sens du contact et esprit d’équipe pour un service de qualité.</p>
+        <p>Jeune professionnel bilingue (français‑anglais) motivé, avec expériences en service client et vente. Sens du contact et esprit d’équipe pour un service de qualité.</p>
       </section>
 
-      <!-- Expérience -->
+      <!-- EXPÉRIENCE -->
       <section>
         <h2>Expérience Professionnelle</h2>
 
@@ -141,7 +144,7 @@ ul li{margin-bottom:.8mm;}
         </div><br>
 
         <div class="block-left">
-          <p class="job-title">Assistant E-commerce<br><span class="location">Kimouse (remote)</span></p>
+          <p class="job-title">Assistant E‑commerce<br><span class="location">Kimouse (remote)</span></p>
           <p class="period">02 / 2024 – 06 / 2024</p>
           <ul>
             <li>Suivi commandes &amp; clients</li>
@@ -158,12 +161,12 @@ ul li{margin-bottom:.8mm;}
         </div>
       </section>
 
-      <!-- Formation -->
+      <!-- FORMATION -->
       <section>
         <h2>Formation</h2>
 
         <div class="block-left">
-          <p class="edu-title">Apprentissage Commerce<br><span class="location">Lycée Saint-Louis</span></p>
+          <p class="edu-title">Apprentissage Commerce<br><span class="location">Lycée Saint‑Louis</span></p>
           <p class="period">09 / 2019 – 06 / 2020</p>
         </div><br>
 
@@ -174,13 +177,13 @@ ul li{margin-bottom:.8mm;}
       </section>
     </div>
 
-    <!-- RIGHT -->
+    <!-- DROITE -->
     <aside class="aside">
 
       <div class="aside-block">
         <h3>Compétences</h3>
         <p class="tag">Service en salle</p><p class="tag">Accueil client</p><p class="tag">Commande</p>
-        <p class="tag">MS Office</p><p class="tag">CRM</p><p class="tag">HTML / CSS</p>
+        <p class="tag">MS Office</p><p class="tag">CRM</p><p class="tag">HTML/CSS</p>
 
         <br><h3>Langues</h3>
         <p class="tag">Français</p><p class="tag">Anglais</p>
@@ -204,6 +207,7 @@ ul li{margin-bottom:.8mm;}
 
     </aside>
   </div><!-- /.columns -->
-</div><!-- /.cv -->
+
+</div><!-- /.page -->
 </body>
 </html>
