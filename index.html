@@ -5,7 +5,6 @@
 <title>Scott William Aymerick MacLeod – CV</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
-/******** VARIABLES & RESET ********/
 :root{
   --primary:#2C3E50;
   --accent:#18BC9C;
@@ -15,199 +14,151 @@
   --tag-bg:#E8F9F4;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-
-/******** PAGE BACKGROUND FOR SCREEN ********/
+@page{size:A4 portrait;margin:0;}
+html,body{height:100%;}
 body{
   font-family:var(--ff);
-  font-size:9.9pt;          /* compact */
+  font-size:9.9pt;
   line-height:1.32;
   color:var(--text);
-  background:#dcdcdc;       /* gris clair autour de la "feuille" */
+  background:#e5e5e5;             /* fond gris clair pour mettre en valeur la "feuille" */
+  display:flex;justify-content:center;align-items:flex-start;
   -webkit-print-color-adjust:exact;
 }
-
-/******** TRUE A4 SHEET WRAPPER ********/
-@page{size:A4 portrait;margin:0;}
-.page{
-  width:210mm;
-  height:297mm;
-  background:#fff;
-  margin:0 auto;            /* centré à l'écran */
-  box-shadow:0 0 6mm rgba(0,0,0,.15);
-  padding:12mm;             /* marges internes */
-  display:flex;
-  flex-direction:column;
-  gap:4.5mm;
+/* "Feuille" A4 centrée */
+.cv-wrapper{
+  width:210mm;height:297mm;background:var(--bg);box-shadow:0 0 6px rgba(0,0,0,.25);
+  margin-top:10mm;                /* légère marge visuelle sur écran */
 }
-
-/******** PRINT: retirer l'effet écran ********/
-@media print{
-  body{background:#fff;}
-  .page{margin:0;box-shadow:none;}
+.cv{
+  width:100%;height:100%;padding:12mm;box-sizing:border-box;display:flex;flex-direction:column;gap:4.5mm;
 }
-
-/******** EN‑TÊTE ********/
-header{
-  display:flex;
-  align-items:center;
-  gap:8mm;
-  border-bottom:1.2px solid var(--primary);
-  padding-bottom:4mm;
-}
-header img{
-  width:24mm;height:24mm;
-  border-radius:50%;object-fit:cover;
-  border:2px solid var(--accent);
-}
-h1{font-size:14.4pt;color:var(--primary);}
-.role{font-weight:600;color:var(--accent);font-size:9.2pt;margin:1px 0 4px;}
-.contact{font-size:8.5pt;display:flex;gap:6mm;flex-wrap:wrap;}
-
-/******** COLONNES ********/
+header{display:flex;align-items:center;gap:8mm;border-bottom:1.2px solid var(--primary);padding-bottom:4mm;}
+header img{width:24mm;height:24mm;border-radius:50%;object-fit:cover;border:2px solid var(--accent);}
+h1{font-size:14.4pt;color:var(--primary);} .role{font-weight:600;color:var(--accent);font-size:9.2pt;margin:1px 0 4px;}
+.contact{font-size:8.5pt;display:flex;gap:6.5mm;flex-wrap:wrap;}
 .columns{flex:1;display:grid;grid-template-columns:60% 38%;gap:2%;}
-
-/******** SECTIONS GAUCHE ********/
 section{margin-bottom:4mm;}
-h2{
-  font-size:10.6pt;
-  color:var(--primary);
-  border-bottom:1.2px solid var(--accent);
-  padding-bottom:.6mm;margin:0 0 2.4mm;
-}
-.job-title,.edu-title{font-weight:600;color:var(--primary);} 
-.location{font-style:italic;font-size:8.3pt;}
-.period{font-size:7.8pt;color:#666;margin-bottom:1.2mm;}
-ul{margin:0 0 0 2.8mm;}
-ul li{margin-bottom:.8mm;}
+h2{font-size:10.6pt;color:var(--primary);border-bottom:1.2px solid var(--accent);padding-bottom:.6mm;margin-bottom:2.4mm;}
+.job-title,.edu-title{font-weight:600;color:var(--primary);} .location{font-style:italic;font-size:8.3pt;} .period{font-size:7.8pt;color:#666;margin-bottom:1.2mm;}
+ul{margin-left:2.8mm;} ul li{margin-bottom:.8mm;}
 .block-left{border-left:1.6px solid var(--accent);padding-left:2.5mm;}
-
-/******** COLONNE DROITE ********/
-.aside h3{
-  font-size:9.4pt;font-weight:600;color:var(--primary);
-  margin:0 0 2.2mm;position:relative;
-}
+.aside h3{font-size:9.4pt;font-weight:600;color:var(--primary);margin-bottom:2.2mm;position:relative;}
 .aside h3::before{content:'›';color:var(--accent);position:absolute;left:-3.5mm;}
-.tag{
-  display:inline-block;background:var(--tag-bg);border-radius:4px;
-  padding:0 4px 1px;font-size:7.8pt;margin:0 1.6mm 1.6mm 0;
-}
+.tag{display:inline-block;background:var(--tag-bg);border-radius:4px;padding:0 4px 1px;font-size:7.8pt;margin:0 1.6mm 1.6mm 0;}
 .aside-block{margin-bottom:4mm;}
 .card{border-left:1.6px solid var(--accent);padding-left:2.5mm;}
-.card .title{font-weight:600;color:var(--primary);} 
-.card .period{font-size:7.8pt;color:#666;margin:0 0 1mm;}
+.card .title{font-weight:600;color:var(--primary);} .card .period{font-size:7.8pt;color:#666;margin:0 0 1mm;}
+@media print{body{background:var(--bg);} .cv-wrapper{box-shadow:none;margin:0;} .cv{transform:scale(0.94);transform-origin:top left;}}
 </style>
 </head>
 <body>
-<div class="page">
-
-  <!-- EN‑TÊTE -->
-  <header>
-    <img src="IMG_20241026_135158.jpg" alt="photo Scott">
-    <div>
-      <h1>Scott William Aymerick MacLeod</h1>
-      <div class="role">Serveur / Service Restauration</div>
-      <div class="contact">
-        <span>✉ scottmacleod156@gmail.com</span>
-        <span>📞 +33 6 59 59 22 64</span>
+<div class="cv-wrapper">
+  <div class="cv">
+    <!-- HEADER -->
+    <header>
+      <img src="IMG_20241026_135158.jpg" alt="photo Scott">
+      <div>
+        <h1>Scott William Aymerick MacLeod</h1>
+        <div class="role">Serveur &amp; Réceptionniste de nuit</div>
+        <div class="contact"><span>✉ scottmacleod156@gmail.com</span><span>📞 +33 6 59 59 22 64</span></div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <div class="columns">
-    <!-- GAUCHE -->
-    <div>
-      <!-- PROFIL -->
-      <section>
-        <h2>Profil</h2>
-        <p>Jeune professionnel bilingue (français‑anglais) motivé, avec expériences en service client et vente. Sens du contact et esprit d’équipe pour un service de qualité.</p>
-      </section>
+    <div class="columns">
+      <!-- LEFT COLUMN -->
+      <div>
+        <!-- PROFIL -->
+        <section>
+          <h2>Profil</h2>
+          <p>Jeune professionnel bilingue (français‑anglais) dynamique, doté d’expériences variées en restauration, hôtellerie et vente. Sens aigu du service, réactif et organisé, je vise à offrir une expérience client irréprochable de l’accueil jusqu’à l’encaissement.</p>
+        </section>
 
-      <!-- EXPÉRIENCE -->
-      <section>
-        <h2>Expérience Professionnelle</h2>
+        <!-- EXPERIENCE -->
+        <section>
+          <h2>Expérience Professionnelle</h2>
 
-        <div class="block-left">
-          <p class="job-title">Ventes &amp; Service Client<br><span class="location">Norauto, Auray</span></p>
-          <p class="period">09 / 2022 – 06 / 2023</p>
-          <ul>
-            <li>Accueil, conseil &amp; caisse</li>
-            <li>Environnement convivial</li>
-          </ul>
-        </div><br>
+          <div class="block-left">
+            <p class="job-title">Ventes &amp; Service Client<br><span class="location">Norauto, Auray</span></p>
+            <p class="period">09 / 2022 – 06 / 2023</p>
+            <ul>
+              <li>Accueil, conseil &amp; caisse (CA journalier ~8 k€)</li>
+              <li>Merchandising et réassort des rayons pneus &amp; accessoires</li>
+            </ul>
+          </div><br>
 
-        <div class="block-left">
-          <p class="job-title">Nettoyage Haute Pression<br><span class="location">Le Bono</span></p>
-          <p class="period">07 / 2023 – 11 / 2023</p>
-          <ul>
-            <li>Interventions variées, rigueur sécurité</li>
-          </ul>
-        </div><br>
+          <div class="block-left">
+            <p class="job-title">Nettoyage Haute Pression<br><span class="location">Le Bono</span></p>
+            <p class="period">07 / 2023 – 11 / 2023</p>
+            <ul><li>Nettoyage façades &amp; toitures (résidentiel &amp; industriel) en binôme</li></ul>
+          </div><br>
 
-        <div class="block-left">
-          <p class="job-title">Assistant E‑commerce<br><span class="location">Kimouse (remote)</span></p>
-          <p class="period">02 / 2024 – 06 / 2024</p>
-          <ul>
-            <li>Suivi commandes &amp; clients</li>
-            <li>Gestion de stock</li>
-          </ul>
-        </div><br>
+          <div class="block-left">
+            <p class="job-title">Assistant E‑commerce<br><span class="location">Kimouse (télétravail)</span></p>
+            <p class="period">02 / 2024 – 06 / 2024</p>
+            <ul>
+              <li>Suivi commandes, réponses chat &amp; e‑mail (avg. 30 tickets/jour)</li>
+              <li>Gestion de stock &amp; mise à jour catalogue Shopify</li>
+            </ul>
+          </div><br>
 
-        <div class="block-left">
-          <p class="job-title">Serveur<br><span class="location">Holly’s Diner</span></p>
-          <p class="period">01 – 03 / 2025</p>
-          <ul>
-            <li>Prise commandes &amp; coordination cuisine</li>
-          </ul>
+          <div class="block-left">
+            <p class="job-title">Serveur<br><span class="location">Holly’s Diner, Vannes</span></p>
+            <p class="period">01 / 2025 – 03 / 2025</p>
+            <ul>
+              <li>Prise de commande sur tablette, conseils plats &amp; boissons (40 couverts/service, jusqu’à 80 le week‑end)</li>
+              <li>Mise en place, débarrassage, encaissement et fermeture de salle</li>
+              <li>Formation de 2 nouveaux équipiers sur les procédures HACCP</li>
+            </ul>
+          </div><br>
+
+          <div class="block-left">
+            <p class="job-title">Réceptionniste de nuit<br><span class="location">La Maison Obono, Vannes</span></p>
+            <p class="period">04 / 2025 – Présent</p>
+            <ul>
+              <li>Accueil des clients après 22 h ; check‑in / check‑out autonome</li>
+              <li>Surveillance sécurité, rondes horaires et gestion des incidents</li>
+              <li>Clôture journalière, rapports financiers &amp; remise de caisse</li>
+              <li>Préparation du buffet petit‑déjeuner pour l’équipe du matin</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- FORMATION -->
+        <section>
+          <h2>Formation</h2>
+          <div class="block-left"><p class="edu-title">Apprentissage Commerce<br><span class="location">Lycée Saint‑Louis, Auray</span></p><p class="period">09 / 2019 – 06 / 2020</p></div><br>
+          <div class="block-left"><p class="edu-title">Initiation Programmation Web<br><span class="location">OpenClassrooms (en cours)</span></p><p class="period">2024 – Présent</p></div>
+        </section>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <aside class="aside">
+        <div class="aside-block">
+          <h3>Compétences</h3>
+          <p class="tag">Service en salle</p><p class="tag">Accueil client</p><p class="tag">Commande</p>
+          <p class="tag">Encaissement</p><p class="tag">MS Office</p><p class="tag">HTML / CSS</p>
+
+          <br><h3>Langues</h3>
+          <p class="tag">Français (natif)</p><p class="tag">Anglais (courant)</p>
+
+          <br><h3>Qualités</h3>
+          <p class="tag">Travail d’équipe</p><p class="tag">Adaptable</p><p class="tag">Dynamique</p>
         </div>
-      </section>
 
-      <!-- FORMATION -->
-      <section>
-        <h2>Formation</h2>
-
-        <div class="block-left">
-          <p class="edu-title">Apprentissage Commerce<br><span class="location">Lycée Saint‑Louis</span></p>
-          <p class="period">09 / 2019 – 06 / 2020</p>
-        </div><br>
-
-        <div class="block-left">
-          <p class="edu-title">Initiation Programmation Web<br><span class="location">OpenClassrooms</span></p>
-          <p class="period">2024 – en cours</p>
+        <div class="aside-block">
+          <h3>Certifications</h3>
+          <p><strong>PSC1</strong> – 2021</p>
+          <p><strong>Marketing Digital</strong> – 2022</p>
         </div>
-      </section>
-    </div>
 
-    <!-- DROITE -->
-    <aside class="aside">
-
-      <div class="aside-block">
-        <h3>Compétences</h3>
-        <p class="tag">Service en salle</p><p class="tag">Accueil client</p><p class="tag">Commande</p>
-        <p class="tag">MS Office</p><p class="tag">CRM</p><p class="tag">HTML/CSS</p>
-
-        <br><h3>Langues</h3>
-        <p class="tag">Français</p><p class="tag">Anglais</p>
-
-        <br><h3>Qualités</h3>
-        <p class="tag">Équipe</p><p class="tag">Adaptable</p><p class="tag">Dynamique</p>
-      </div>
-
-      <div class="aside-block">
-        <h3>Certifications</h3>
-        <p><strong>PSC1</strong> – 2021</p>
-        <p><strong>Marketing Digital</strong> – 2022</p>
-      </div>
-
-      <div class="aside-block">
-        <h3>Bénévolat</h3>
-        <div class="card">
-          <p class="title">Assistant EHPAD<br><span class="location">Vannes (2021)</span></p>
+        <div class="aside-block">
+          <h3>Bénévolat</h3>
+          <div class="card"><p class="title">Assistant EHPAD<br><span class="location">Vannes (2021)</span></p></div>
         </div>
-      </div>
-
-    </aside>
-  </div><!-- /.columns -->
-
-</div><!-- /.page -->
+      </aside>
+    </div><!-- /.columns -->
+  </div><!-- /.cv -->
+</div><!-- /.wrapper -->
 </body>
 </html>
